@@ -1,0 +1,32 @@
+<mat-icon 
+  class="menu-btn"
+  [ngStyle]="{ width: width, height: height }"
+  (click)="toggleSidebar($event)">
+  menu
+</mat-icon>
+
+<div class="sidebar" [ngClass]="{ open: isSidebarOpen }" (click)="$event.stopPropagation()">
+  <div class="sidebar-header">
+    <button class="last-header-item close-btn" (click)="toggleSidebar($event)">×</button>
+  </div>
+
+  <ul class="menu-links">
+    <li
+      class="menu-item"
+      *ngFor="let item of menuItems"
+      (click)="navigateTo(item.route)"
+      [ngClass]="{ active: isActive(item.route) }">
+      <mat-icon class="menu-icon">{{ getIconForRoute(item.route) }}</mat-icon>
+      {{ item.label }}
+    </li>
+
+    <div class="row">
+      <h4 class="menu-title"> Links </h4>
+      <div class="line">  </div>
+    </div>
+
+    <li class="menu-item" (click)="goToUrl('https://www.instagram.com/lunarliondance?igsh=MW9iMnU3eTJzMXc%3D&utm_source=qr')">      
+      Lunar Lion Dance
+    </li>
+  </ul>
+</div>

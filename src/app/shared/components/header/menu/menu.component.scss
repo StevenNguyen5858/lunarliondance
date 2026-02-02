@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+}
+
+.menu-btn {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10; /* Ensure the container stays below the sidebar */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid #3c434d;
+}
+
+.last-header-item {
+  margin-left: auto;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #9198a1;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  padding-top: 0;
+  top: 0;
+  left: -252px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 99vh;
+  background-color:#101414;
+  color: #b7a67e;
+  transition: left 0.3s ease; /* Smooth sliding effect */
+  z-index: 20; /* Ensure the sidebar is above other content */
+  border: solid 1px #3c434d;
+  border-radius: 0 10px 0 0;
+}
+
+.sidebar.open {
+  left: -1px; /* Sidebar slides in */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  margin-right: 0.5rem;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 5px 0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  transition: background-color 0.2s border 0.2s;
+  border: 1px solid transparent;
+}
+
+.sidebar li:hover {
+  background-color: #555;
+  border: 1px solid #444;
+}
+
+.sidebar li.active {
+  background-color: #555; 
+  border: 1px solid #444; 
+}
+
+.menu-title {
+  white-space: nowrap;
+  margin: 0.5rem;
+
+}

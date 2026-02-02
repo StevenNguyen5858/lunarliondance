@@ -1,0 +1,51 @@
+.title-container {
+    container-type: inline-size;
+
+    border: 1px solid #ccc;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+::ng-deep .bg img {
+    position: absolute;  
+    top: 0;              
+    left: 0;           
+    width: 100%;        
+    height: 100%;        
+    object-fit: cover;  
+    object-position: center center; 
+}
+
+.text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30%;
+}
+
+h1 {
+    font-size: 20cqw;
+
+    color: red;
+}
+
+h2 {
+    font-size: 6cqw;
+}

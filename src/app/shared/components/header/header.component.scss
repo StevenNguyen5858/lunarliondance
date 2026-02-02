@@ -1,0 +1,30 @@
+.header {
+    position: sticky;      /* makes it stick relative to scroll container */
+    top: 0;                /* pin to the top */
+    z-index: 128; 
+    background-color: #010409;
+    border: 1px solid #3c434d;
+    width: 100%;
+    height: 2.5rem;
+    margin: 0px -1px 0px -1px;
+    display: flex;
+    align-items: center;
+    color: #fef6eb;
+}
+
+.first-item {
+    margin-left: 2rem;
+}
+
+.item {
+    margin-left: 1rem;
+    color: #fef6eb;
+}
+
+span {
+    font-size: 14px;
+}
+
+.right-bar {
+    margin-right: 1rem;
+}
