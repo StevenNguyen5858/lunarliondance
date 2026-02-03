@@ -5,11 +5,27 @@
   font-style: normal;
 }
 
+html {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background-color: #101414;
     color: #fef6eb;
     justify-content: center;
+}
+
+app-root {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .body-item {
