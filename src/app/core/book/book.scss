@@ -2,6 +2,13 @@
   display: block;
 }
 
+:host,
+:host *,
+:host *::before,
+:host *::after {
+  box-sizing: border-box;
+}
+
 .book-page {
   padding: 6.1rem 1.2rem 4rem;
   background: #f5f4ef;
