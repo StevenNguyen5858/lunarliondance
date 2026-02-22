@@ -11,5 +11,5 @@ import { RouterLink } from '@angular/router';
 export class FooterComponent {
   readonly emailLink = 'mailto:lunarlionofficial@gmail.com';
   readonly instagramLink = 'https://www.instagram.com/lunarliondance?igsh=MW9iMnU3eTJzMXc%3D&utm_source=qr';
-  readonly youtubeLink = 'https://www.youtube.com/@lunarliondance';
+  readonly facebookLink = 'https://www.facebook.com/p/Lunar-Lion-Dance-100090115921222/';
 }
