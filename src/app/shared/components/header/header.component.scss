@@ -1,28 +1,122 @@
-.header {
-    z-index: 128;
-    background-color: #010409;
-    border-bottom: 1px solid #3c434d;
-    width: 100%;
-    height: 2.5rem;
-    margin: 0px -1px 0px -1px;
-    display: flex;
-    align-items: center;
-    color: #fef6eb;
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
 }
 
-.first-item {
-    margin-left: 2rem;
+.homebar {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  width: 100%;
+  padding: 0.95rem 1.1rem 0.75rem;
+  box-sizing: border-box;
+  transition: background-color 0.22s ease, border-color 0.22s ease, backdrop-filter 0.22s ease;
 }
 
-.item {
-    margin-left: 1rem;
-    color: #fef6eb;
+.homebar.at-top {
+  background: #180000;
+  border-bottom: 1px solid rgba(255, 210, 210, 0.25);
+  backdrop-filter: blur(7px);
 }
 
-span {
-    font-size: 14px;
+.homebar.at-top.home-route {
+  background: rgba(24, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 210, 210, 0.18);
+  backdrop-filter: blur(5px);
 }
 
-.right-bar {
-    margin-right: 1rem;
+.homebar.scrolled {
+  background: rgba(24, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 210, 210, 0.18);
+  backdrop-filter: blur(5px);
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin-left: 0.2rem;
+  min-width: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: #fff5f3;
+  text-decoration: none;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 0.7;
+}
+
+.social-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link img {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+@media (max-width: 760px) {
+  .homebar {
+    padding: 0.8rem 0.7rem 0.65rem;
+    gap: 0.65rem;
+  }
+
+  .nav-links {
+    flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 0.7rem;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+  }
+
+  .social-links {
+    gap: 0.55rem;
+  }
+
+  .icon-link img {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
 }

@@ -1,17 +1,50 @@
-<div class="body">
-    <app-title-container>
-        <img bg src="assets/backdrops/performer.jpg" alt="Example"/>
-        <div text class="about-title">
-            <h1 class="name">Lunar Lion Dance</h1>
-            <h2>Performer</h2>
-        </div>
-    </app-title-container>
+<main class="home-page">
+  <section class="hero">
+    <img src="assets/backdrops/homepage.jpg"/>
+    <div class="hero-tint"></div>
+    <div class="hero-copy">
+      <h1>Lunar Lion Dance</h1>
+      <p>Community lion dancing troupe representing Louisville.</p>
+      <div class="final-cta">
+        <a class="action-link" routerLink="/book">Book Now!</a>
+      </div>
+    </div>
+  </section>
 
-    <app-title-container>
-        <img bg src="assets/backdrops/founder.jpg" alt="Example"/>
-        <div text class="about-title">
-            <h1 class="name">Lunar Lion Dance</h1>
-            <h2>Non-profit Founder</h2>
-        </div>
-    </app-title-container>
-</div>
+  <section class="content-shell">
+    <div class="section section-split section-about">
+      <div class="copy">
+        <h2>About Lunar LD</h2>
+        <p>
+          Lunar Lion Dance is a community-based lion dance troupe founded in 2022 in Louisville, Kentucky. Our mission is to share the art of lion dancing across the region through our performances, workshops, and events, welcoming individuals from all walks of life, regardless of background.
+        </p>
+        <p>
+          Our team consists of a ceremonial festival drumline, a percussion ensemble, and an acrobatic dance group. We perform traditional lion dancing routines for a variety of events, such as cultural festivals, community celebrations, private functions, corporate events, and more.
+        </p>
+      </div>
+      <img class="section-image" src="assets/backdrops/bannerdrop.jpg" alt="Lunar Lion Dance banner performance" />
+    </div>
+
+    <section class="section media-panel" *ngIf="mediaImages.length > 0">
+      <h2>Media Panel</h2>
+      <div class="media-grid">
+        <figure class="media-item" *ngFor="let image of mediaImages">
+          <button class="media-trigger" type="button" (click)="openExpandedImage(image)">
+            <img [src]="image" alt="Lunar Lion Dance media image" loading="lazy" />
+          </button>
+        </figure>
+      </div>
+    </section>
+
+    <div class="media-overlay" *ngIf="expandedImage" (click)="onOverlayClick($event)">
+      <button class="overlay-close" type="button" (click)="closeExpandedImage()" aria-label="Close image viewer">
+        X
+      </button>
+      <img class="overlay-image" [src]="expandedImage" alt="Expanded Lunar Lion Dance media image" />
+    </div>
+
+    <div class="final-cta">
+      <a class="action-link" routerLink="/book">Book Now!</a>
+    </div>
+  </section>
+</main>

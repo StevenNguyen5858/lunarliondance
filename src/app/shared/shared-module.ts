@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TemplateComponent } from './components/template.component/template.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TitleContainerComponent } from './components/title-container/title-container.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,13 @@ import { TitleContainerComponent } from './components/title-container/title-cont
     CommonModule,
     TemplateComponent,
     HeaderComponent,
+    FooterComponent,
     TitleContainerComponent,
   ],
   exports: [
     TemplateComponent,
     HeaderComponent,
+    FooterComponent,
     TitleContainerComponent,
     ]
 })

@@ -1,88 +1,81 @@
-@font-face {
-  font-family: 'font1';
-  src: url('assets/fonts/RusillaSerif.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #101414;
-    color: #fef6eb;
-    justify-content: center;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f7f7f5;
+  color: #1d1d1d;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
 app-root {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
 }
 
 .body-item {
-    max-width: 950px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fef6eb;
+  max-width: 950px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 980px) { 
-    .body-item {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
-        max-width: calc(100% - 3rem);
-    }
+  .body-item {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: calc(100% - 3rem);
+  }
 }
 
 .row {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .line {
-    flex-grow: 1;
-    margin-top: 1rem;
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px solid #3c434d;
-    margin-top: 0;
+  flex-grow: 1;
+  margin-top: 1rem;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #d0d0d0;
+  margin-top: 0;
 }
 
 .backdrop-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   
-    object-position: center;
-    display: block;      
-    
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .backdrop-img.left {
-    object-position: left center;
+  object-position: left center;
 }
 
 .right {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .skill {
-    display: inline-block;
-    border-radius: 100px;
-    padding: 0 1vw;
-    height: min-content;
-    width: max-content;
-    background-color: #ffa9f8;
-    color: #000;
-    cursor: default;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 0 1vw;
+  height: min-content;
+  width: max-content;
+  background-color: #d8e7ff;
+  color: #122b4a;
+  cursor: default;
 }

@@ -1,10 +1,23 @@
-<div class="header">
-    <app-menu class="item" [width]="'28px'" [height]="'28px'"></app-menu>
-    <img class="item" src="assets/SN_Mono_Circle.png" width="auto%" height="70%">
-    <span class="item">Steven Nguyen</span>
+<header class="homebar" [class.at-top]="!isScrolled" [class.scrolled]="isScrolled" [class.home-route]="isHomeRoute">
+  <a class="logo-link" routerLink="/" aria-label="Lunar Lion Dance">
+    <img class="logo-icon" src="assets/lld.ico"/>
+  </a>
 
-    <div class="right right-bar">
-        <a class="item" href="tel:+15022109871">Contact</a>
-        <a class="item" [href]="'mailto:' + 'stevenhuyenn@gmail.com'">Email</a>
-    </div>
-</div>
+  <nav class="nav-links" aria-label="Primary">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/book" routerLinkActive="active">Book</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <div class="social-links">
+    <a class="icon-link" [href]="instagramLink" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="assets/icons/instagram.svg"/>
+    </a>
+    <a class="icon-link" [href]="youtubeLink" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <img src="assets/icons/youtube.svg"/>
+    </a>
+    <a class="icon-link" [href]="emailLink" aria-label="Email">
+      <img src="assets/icons/mail.svg"/>
+    </a>
+  </div>
+</header>

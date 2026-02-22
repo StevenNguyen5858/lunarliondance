@@ -1,0 +1,106 @@
+<main class="contact-page">
+  <section class="form-shell">
+    <header>
+      <h1>Contact Us</h1>
+      <p>Fields marked with * are required.</p>
+    </header>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="grid two-column">
+        <label>
+          Name*
+          <input type="text" formControlName="name" />
+          <span class="error" *ngIf="hasError('name')">Name is required.</span>
+        </label>
+
+        <label>
+          E-mail*
+          <input type="email" formControlName="email" />
+          <span class="error" *ngIf="hasError('email')">Valid e-mail is required.</span>
+        </label>
+
+        <label>
+          Phone Number*
+          <input type="tel" formControlName="phone" />
+          <span class="error" *ngIf="hasError('phone')">Phone number is required.</span>
+        </label>
+
+        <label>
+          Reason for Contact*
+          <select formControlName="reason">
+            <option value="">Select one</option>
+            <option *ngFor="let reason of reasons" [value]="reason.value">
+              {{ reason.label }}
+            </option>
+          </select>
+          <span class="error" *ngIf="hasError('reason')">Reason is required.</span>
+        </label>
+      </div>
+
+      <label class="full">
+        Message
+        <textarea rows="5" formControlName="message"></textarea>
+      </label>
+
+      <!-- Event Booking Section -->
+      <section class="dynamic-section" *ngIf="isEventBooking()">
+        <h2>Event Booking Details</h2>
+
+        <div class="grid two-column">
+          <label>
+            Event Type*
+            <select formControlName="eventType">
+              <option value="">Select event type</option>
+              <option *ngFor="let type of eventTypes" [value]="type.value">
+                {{ type.label }}
+              </option>
+            </select>
+            <span class="error" *ngIf="hasError('eventType')">
+              Event type is required.
+            </span>
+          </label>
+
+          <label>
+            Performance Type*
+            <select formControlName="performanceType">
+              <option value="">Select performance type</option>
+              <option *ngFor="let type of performanceTypes" [value]="type.value">
+                {{ type.label }}
+              </option>
+            </select>
+            <span class="error" *ngIf="hasError('performanceType')">
+              Performance type is required.
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Join the Team Section -->
+      <section class="dynamic-section" *ngIf="isJoiningTeam()">
+        <h2>Join the Team Details</h2>
+
+        <div class="grid two-column">
+          <label>
+            Current Age*
+            <input type="number" min="0" formControlName="currentAge" />
+            <span class="error" *ngIf="hasError('currentAge')">
+              Current age is required.
+            </span>
+          </label>
+
+        </div>
+      </section>
+
+      <button class="submit" type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+      </button>
+
+      <p class="submit-feedback success" *ngIf="submitSuccessMessage" role="status" aria-live="polite">
+        {{ submitSuccessMessage }}
+      </p>
+      <p class="submit-feedback error" *ngIf="submitErrorMessage" role="alert">
+        {{ submitErrorMessage }}
+      </p>
+    </form>
+  </section>
+</main>

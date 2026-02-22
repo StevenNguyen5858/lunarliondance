@@ -1,0 +1,83 @@
+<main class="book-page">
+  <section class="hero">
+    <h1>Book a Performance</h1>
+    <p>
+      Book a show with Lunar Lion Dance for your event!
+    </p>
+  </section>
+
+  <section class="request-grid">
+    <article class="request-card highlight">
+      <h2>Festival Drum Showcase</h2>
+      <img class="card-image" src="assets/backdrops/drummers.jpg" />
+      <p>High energy ceremonial ensemble, festival drumline and percussion crew.</p>
+      <ul>
+        <li>Drum, gong, and cymbal performance.</li>
+        <li>Loud, energetic music showcase to set the atmosphere for any event.</li>
+        <li>Best for opening ceremmonies and energetic gatherings.</li>
+      </ul>
+      <a
+        class="cta"
+        [routerLink]="['/contact']"
+        [queryParams]="{ reason: 'event-booking', performanceType: 'festival-drum-showcase' }">
+        Book
+      </a>
+    </article>
+
+    <article class="request-card">
+      <h2>Lion Dance</h2>
+      <img class="card-image" src="assets/backdrops/winkywink.jpg" />
+      <p>Traditional lion dance performance accompanied by music.</p>
+      <ul>
+        <li>Acrobatic and martial performers dance alongside drum, gong, and cymbals to bless the location and attendees.</li>
+        <li>Audience interaction and performances (stage shows, bench routines, and cheng blessings).</li>
+        <li>Great for schools, celebrations, cultural events, weddings, and more.</li>
+      </ul>
+      <a
+        class="cta"
+        [routerLink]="['/contact']"
+        [queryParams]="{ reason: 'event-booking', performanceType: 'lion-dance' }">
+        Book
+      </a>
+    </article>
+
+    <article class="request-card">
+      <h2>Other Requests</h2>
+      <img class="card-image" src="assets/backdrops/teamphoto.jpg" />
+      <p>
+        For custom ideas, workshops, and requests outside standard formats,
+        send us your details and we will follow up.
+      </p>
+      <ul>
+        <li>If any special accomodations are needed for lion dancing or music showcases.</li>
+        <li>For any sponsorships, collaborations, or otherwise.</li>
+      </ul>
+      <a class="cta ghost" [routerLink]="['/contact']" [queryParams]="{ reason: 'other' }">Contact Us</a>
+    </article>
+  </section>
+
+  <section class="faq">
+    <h2>Booking FAQ</h2>
+
+    <h3>Cost and Payment</h3>
+    <details>
+      <summary>How are donations spent?</summary>
+      <p>Donations cover performance costs including travel expenses, equipment maintenace, and team meals.</p>
+      <p>All contributions go directly towards supporting the team and no funds received from lion dancing are used for personal benefit.</p>
+    </details>
+
+    <details>
+      <summary>How are performance fees and donations determined?</summary>
+      <p>Performance fees are often determined by the following:</p>
+      <ul>
+        <li>Event Timing</li>
+        <li>Event Location</li>
+        <li>Event Type</li>
+        <li>Event Audience</li>
+        <li>Time of Event (in regards to performer availability)</li>
+      </ul>
+      <p>Our Client Contact team will provide you with a base quote for the performance fees. This fee is the minimum required amount to cover performance costs and maintenance. Additional donations above that amount are optional. </p>
+    </details>
+
+  </section>
+</main>

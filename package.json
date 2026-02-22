@@ -2,8 +2,12 @@
   "name": "lunarliondance",
   "version": "0.0.0",
   "scripts": {
+    "generate:mediapool": "node ./scripts/generate-mediapool-manifest.mjs",
+    "watch:mediapool": "node ./scripts/watch-mediapool-manifest.mjs",
+    "start:ng": "ng serve",
+    "start": "node ./scripts/start-dev.mjs",
+    "prebuild": "npm run generate:mediapool",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "deploy": "npx wrangler pages deploy"
   },
